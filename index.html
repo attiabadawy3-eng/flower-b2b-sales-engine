@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#5b2038">
+<title>فلور | محرك مبيعات الشركات</title>
+<style>
+:root{--wine:#7a314d;--deep:#5b2038;--gold:#b79862;--bg:#f6f3f4;--card:#fff;--ink:#231f22;--muted:#756d72;--line:#e7dfe3;--ok:#24713d;--warn:#8a651d;--bad:#9c2f42}
+*{box-sizing:border-box}body{margin:0;font-family:Tahoma,Arial,sans-serif;background:var(--bg);color:var(--ink)}
+header{background:linear-gradient(135deg,var(--deep),var(--wine));color:#fff;padding:22px 28px;box-shadow:0 8px 26px #4b193025}
+.head{max-width:1500px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:20px}.brand{display:flex;align-items:center;gap:14px}
+.mark{width:48px;height:48px;border:1px solid #d8b887;border-radius:50%;display:grid;place-items:center;font-family:Georgia,serif;font-weight:700;letter-spacing:1px}
+h1{font-size:23px;margin:0}.sub{opacity:.82;margin-top:5px;font-size:13px}.cloud{font-size:12px;background:#ffffff16;border:1px solid #ffffff30;padding:8px 11px;border-radius:999px}
+.wrap{max-width:1500px;margin:auto;padding:22px}.cards{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.card{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:16px;box-shadow:0 4px 16px #3f20300b}.card span{font-size:12px;color:var(--muted)}.card b{display:block;font-size:28px;color:var(--deep);margin-top:6px}
+.note{background:#fffaf1;border:1px solid #ead9bb;border-radius:12px;padding:11px 14px;margin:14px 0;color:#6f5729;font-size:12px;line-height:1.8}
+.toolbar{display:grid;grid-template-columns:minmax(220px,2fr) repeat(3,minmax(130px,1fr)) auto;gap:9px;margin:14px 0}
+input,select,textarea,button{font:inherit}input,select,textarea{width:100%;border:1px solid #d9d0d5;border-radius:9px;padding:10px 11px;background:#fff;color:var(--ink)}
+button,.btn{border:0;border-radius:9px;padding:10px 13px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:6px}
+.primary{background:var(--deep);color:#fff}.gold{background:var(--gold);color:#fff}.ghost{background:#eee7eb;color:var(--deep)}.danger{background:#f7e8eb;color:var(--bad)}
+.controls{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}.tablewrap{overflow:auto;background:#fff;border:1px solid var(--line);border-radius:13px}
+table{width:100%;border-collapse:collapse;min-width:1050px;font-size:13px}th,td{padding:11px 9px;border-bottom:1px solid #eee8eb;text-align:right;vertical-align:top}
+th{position:sticky;top:0;background:#faf8f9;color:#5f535a;z-index:2;font-size:12px}.company{font-weight:700;color:var(--deep)}small{color:var(--muted)}
+.score{display:inline-flex;min-width:44px;justify-content:center;padding:5px 8px;border-radius:999px;font-weight:700}.s-high{background:#e8f5eb;color:var(--ok)}.s-mid{background:#fff4db;color:var(--warn)}.s-low{background:#f2e8ec;color:var(--wine)}
+.actions{display:flex;gap:5px;flex-wrap:wrap}.actions button,.actions a{font-size:11px;padding:6px 8px}
+.empty{text-align:center;padding:45px;color:var(--muted)}
+.modalbg{display:none;position:fixed;inset:0;background:#1c0d1490;z-index:50;align-items:center;justify-content:center;padding:18px}.modalbg.show{display:flex}
+.modal{width:min(820px,100%);max-height:92vh;overflow:auto;background:#fff;border-radius:16px;padding:20px;box-shadow:0 24px 70px #0004}.modal h2{margin:0 0 15px;color:var(--deep)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}.wide{grid-column:1/-1}.modalbar{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.message{white-space:pre-wrap;background:#faf7f8;border:1px solid var(--line);border-radius:10px;padding:14px;line-height:1.9}
+.badge{display:inline-block;padding:4px 7px;border-radius:999px;background:#f1eaed;color:var(--wine);font-size:11px}
+footer{text-align:center;font-size:11px;color:#837a80;padding:18px 5px 28px}
+@media(max-width:1000px){.cards{grid-template-columns:repeat(2,1fr)}.toolbar{grid-template-columns:1fr 1fr}.head{align-items:flex-start}.cloud{display:none}}
+@media(max-width:600px){header{padding:16px}.wrap{padding:14px}.cards{grid-template-columns:1fr 1fr}.card{padding:12px}.card b{font-size:23px}.toolbar{grid-template-columns:1fr}.grid2{grid-template-columns:1fr}.wide{grid-column:auto}h1{font-size:19px}}
+@media print{header,.toolbar,.controls,.note,.actions,footer{display:none}.wrap{padding:0}.cards{grid-template-columns:repeat(5,1fr)}body{background:#fff}.tablewrap{border:0}th{position:static}}
+</style>
+</head>
+<body>
+<header><div class="head"><div class="brand"><div class="mark">FH</div><div><h1>فلور | محرك مبيعات الشركات</h1><div class="sub">إدارة العملاء المحتملين للشركات والإقامات طويلة وقصيرة المدى</div></div></div><div class="cloud">نسخة Render المجانية · التخزين على جهازك</div></div></header>
+<div class="wrap">
+<div class="cards">
+ <div class="card"><span>إجمالي العملاء</span><b id="kTotal">0</b></div>
+ <div class="card"><span>فرص قوية 75+</span><b id="kHot">0</b></div>
+ <div class="card"><span>تم التواصل</span><b id="kContacted">0</b></div>
+ <div class="card"><span>مهتم / طلب عرض</span><b id="kInterested">0</b></div>
+ <div class="card"><span>متابعة مستحقة</span><b id="kDue">0</b></div>
+</div>
+<div class="note">البيانات محفوظة داخل هذا المتصفح فقط ولا تُرفع إلى Render. استخدم زر <b>نسخة احتياطية JSON</b> بشكل دوري، خصوصًا قبل تغيير الجهاز أو مسح بيانات المتصفح.</div>
+<div class="toolbar">
+ <input id="q" placeholder="ابحث باسم الشركة أو النشاط أو الهاتف أو البريد">
+ <select id="statusFilter"></select>
+ <select id="branchFilter"></select>
+ <select id="scoreFilter"><option value="0">كل الدرجات</option><option value="75">75+ فرصة قوية</option><option value="60">60+</option></select>
+ <button class="primary" onclick="openLead()">+ عميل جديد</button>
+</div>
+<div class="controls">
+ <button class="ghost" onclick="exportJSON()">نسخة احتياطية JSON</button>
+ <button class="ghost" onclick="document.getElementById('importFile').click()">استعادة نسخة</button>
+ <input id="importFile" type="file" accept=".json" hidden>
+ <button class="ghost" onclick="exportCSV()">تصدير CSV</button>
+ <button class="ghost" onclick="window.print()">طباعة</button>
+</div>
+<div class="tablewrap"><table><thead><tr><th>الشركة</th><th>النشاط / المدينة</th><th>الفرع</th><th>التواصل</th><th>Score</th><th>الحالة</th><th>المتابعة</th><th>الإجراءات</th></tr></thead><tbody id="rows"></tbody></table><div id="empty" class="empty" style="display:none">لا توجد بيانات بعد. أضف أول عميل محتمل من زر «عميل جديد».</div></div>
+</div>
+<footer>فلور · أداة داخلية لإدارة فرص مبيعات الشركات. لا يتم إرسال أي رسالة تلقائيًا بدون إجراء منك.</footer>
+
+<div class="modalbg" id="leadModal"><div class="modal"><h2 id="leadTitle">إضافة عميل محتمل</h2><div class="grid2">
+<input id="fName" placeholder="اسم الشركة *"><input id="fCategory" placeholder="النشاط">
+<input id="fCity" placeholder="المدينة"><select id="fBranch"><option value="">اختيار تلقائي للفرع</option><option>فلور 1</option><option>فلور 2</option><option>فلور 3</option><option>فلور 4</option></select>
+<input id="fPhone" placeholder="الهاتف"><input id="fEmail" placeholder="البريد الإلكتروني">
+<input id="fWebsite" placeholder="الموقع الإلكتروني"><input id="fAddress" placeholder="العنوان">
+<textarea class="wide" id="fNotes" rows="4" placeholder="ملاحظات"></textarea>
+</div><div class="modalbar"><button class="primary" onclick="saveLead()">حفظ</button><button class="ghost" onclick="closeModals()">إلغاء</button></div></div></div>
+
+<div class="modalbg" id="msgModal"><div class="modal"><h2>رسالة التواصل</h2><div id="msgText" class="message"></div><div class="modalbar">
+<button class="primary" onclick="copyMessage()">نسخ الرسالة</button><a id="waBtn" class="btn gold" target="_blank">فتح واتساب</a><a id="mailBtn" class="btn ghost">فتح البريد</a><button class="ghost" onclick="closeModals()">إغلاق</button>
+</div></div></div>
+
+<script>
+const KEY='flower_b2b_render_v1';
+const statuses=['جديد','تم التواصل','متابعة','مهتم','طلب عرض سعر','تم التحويل لحجز','غير مناسب','لا يرغب بالتواصل'];
+const branches=['فلور 1','فلور 2','فلور 3','فلور 4'];
+let state=loadState(), editingId=null, messageLeadId=null;
+
+function loadState(){try{const x=JSON.parse(localStorage.getItem(KEY));if(x&&Array.isArray(x.leads))return x}catch(e){}return{version:1,leads:[],activities:[]}}
+function persist(){localStorage.setItem(KEY,JSON.stringify(state))}
+function today(){return new Date().toISOString().slice(0,10)}
+function addDays(n){const d=new Date();d.setDate(d.getDate()+n);return d.toISOString().slice(0,10)}
+function uid(){return Date.now().toString(36)+Math.random().toString(36).slice(2,8)}
+function esc(s){return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+function branchFor(city,address=''){const x=(city+' '+address).toLowerCase();if(/المجمعة|حرمة|majmaah|hurmah/.test(x))return'فلور 4';if(/القيصومة|qaisumah|القيصومه/.test(x))return'فلور 3';if(/السلام|al salam/.test(x)&&/الدمام|dammam/.test(x))return'فلور 2';if(/العنود|anoud|الدمام|dammam/.test(x))return'فلور 1';return''}
+function scoreLead(x){let s=20,t=((x.name||'')+' '+(x.category||'')).toLowerCase(),city=(x.city||'').toLowerCase();if(/المجمعة|حرمة|الدمام|القيصومة|majmaah|hurmah|dammam|qaisumah/.test(city))s+=25;if(/مقاول|مقاولات|صيانة|تشغيل|مصنع|صناعي|مشروع|construction|contract|maintenance|industrial|factory/.test(t))s+=30;else if(/مستشفى|طبي|نادي|فريق|سفر|سياحة|فعاليات|hospital|medical|club|travel|tour|event/.test(t))s+=22;else if(/شركة|مؤسسة|company|corporation/.test(t))s+=14;if(x.phone)s+=8;if(x.email)s+=10;if(x.website)s+=7;return Math.min(100,s)}
+function renderFilters(){statusFilter.innerHTML='<option value="">كل الحالات</option>'+statuses.map(s=>`<option>${s}</option>`).join('');branchFilter.innerHTML='<option value="">كل الفروع</option>'+branches.map(s=>`<option>${s}</option>`).join('')}
+function render(){const query=q.value.trim().toLowerCase(),st=statusFilter.value,br=branchFilter.value,min=+scoreFilter.value;const list=state.leads.filter(x=>(!query||(`${x.name} ${x.category} ${x.city} ${x.phone} ${x.email}`).toLowerCase().includes(query))&&(!st||x.status===st)&&(!br||x.branch===br)&&x.score>=min).sort((a,b)=>b.score-a.score||b.updatedAt.localeCompare(a.updatedAt));rows.innerHTML=list.map(rowHTML).join('');empty.style.display=list.length?'none':'block';stats()}
+function rowHTML(x){const sc=x.score>=75?'s-high':x.score>=60?'s-mid':'s-low',contact=[x.phone,x.email].filter(Boolean).map(esc).join('<br>')||'—';return`<tr><td><div class="company">${esc(x.name)}</div><small>${esc(x.source||'يدوي')}</small></td><td>${esc(x.category||'—')}<br><small>${esc(x.city||'—')}</small></td><td>${esc(x.branch||'غير محدد')}</td><td>${contact}</td><td><span class="score ${sc}">${x.score}</span></td><td><span class="badge">${esc(x.status)}</span>${x.dnc?'<br><small>موقوف التواصل</small>':''}</td><td>${esc(x.nextFollowup||'—')}</td><td><div class="actions"><button class="gold" onclick="showMessage('${x.id}')">رسالة</button><button class="ghost" onclick="mark('${x.id}','contacted')">تواصل</button><button class="ghost" onclick="mark('${x.id}','interested')">مهتم</button><button class="ghost" onclick="editLead('${x.id}')">تعديل</button><button class="danger" onclick="mark('${x.id}','dnc')">إيقاف</button></div></td></tr>`}
+function stats(){const t=today();kTotal.textContent=state.leads.length;kHot.textContent=state.leads.filter(x=>x.score>=75&&!x.dnc).length;kContacted.textContent=state.leads.filter(x=>['تم التواصل','متابعة','مهتم','طلب عرض سعر','تم التحويل لحجز'].includes(x.status)).length;kInterested.textContent=state.leads.filter(x=>['مهتم','طلب عرض سعر','تم التحويل لحجز'].includes(x.status)).length;kDue.textContent=state.leads.filter(x=>x.nextFollowup&&x.nextFollowup<=t&&!x.dnc).length}
+function openLead(){editingId=null;leadTitle.textContent='إضافة عميل محتمل';['fName','fCategory','fCity','fPhone','fEmail','fWebsite','fAddress','fNotes'].forEach(id=>document.getElementById(id).value='');fBranch.value='';leadModal.classList.add('show')}
+function editLead(id){const x=state.leads.find(x=>x.id===id);if(!x)return;editingId=id;leadTitle.textContent='تعديل بيانات العميل';fName.value=x.name||'';fCategory.value=x.category||'';fCity.value=x.city||'';fBranch.value=x.branch||'';fPhone.value=x.phone||'';fEmail.value=x.email||'';fWebsite.value=x.website||'';fAddress.value=x.address||'';fNotes.value=x.notes||'';leadModal.classList.add('show')}
+function saveLead(){const obj={name:fName.value.trim(),category:fCategory.value.trim(),city:fCity.value.trim(),branch:fBranch.value,phone:fPhone.value.trim(),email:fEmail.value.trim(),website:fWebsite.value.trim(),address:fAddress.value.trim(),notes:fNotes.value.trim()};if(!obj.name)return alert('اسم الشركة مطلوب');if(!obj.branch)obj.branch=branchFor(obj.city,obj.address);obj.score=scoreLead(obj);const now=new Date().toISOString();if(editingId){const i=state.leads.findIndex(x=>x.id===editingId);state.leads[i]={...state.leads[i],...obj,updatedAt:now}}else{state.leads.push({...obj,id:uid(),status:'جديد',source:'يدوي',lastContact:'',nextFollowup:'',dnc:false,createdAt:now,updatedAt:now})}persist();closeModals();render()}
+function mark(id,action){const x=state.leads.find(x=>x.id===id);if(!x)return;const now=new Date().toISOString();if(action==='contacted'){x.status='تم التواصل';x.lastContact=today();x.nextFollowup=addDays(3);x.dnc=false}else if(action==='interested'){x.status='مهتم';x.nextFollowup=addDays(1);x.dnc=false}else if(action==='dnc'){if(!confirm('إيقاف أي متابعة لهذا العميل؟'))return;x.status='لا يرغب بالتواصل';x.nextFollowup='';x.dnc=true}x.updatedAt=now;state.activities.push({id:uid(),leadId:id,action,at:now});persist();render()}
+function messageFor(x){if(x.dnc)return'التواصل مع هذا العميل موقوف.';const b=x.branch||'أقرب فرع فلور';return`السلام عليكم ورحمة الله وبركاته،
+
+معكم فلور للشقق المخدومة. نتواصل معكم بخصوص احتياج ${x.category||'منشأتكم'} لإقامة الموظفين أو فرق العمل في المنطقة.
+
+لدينا في ${b} خيارات إقامة مخدومة مناسبة للإقامات القصيرة والطويلة، ويمكننا تجهيز عرض للشركات حسب عدد النزلاء ومدة الإقامة.
+
+إذا لديكم احتياج حالي أو قريب يسعدنا تزويدكم بالتوفر والأسعار المناسبة.
+
+مع خالص التقدير،
+فلور`}
+function normPhone(p){let d=(p||'').replace(/\D/g,'');if(d.startsWith('05'))d='966'+d.slice(1);if(d.startsWith('5')&&d.length===9)d='966'+d;return d}
+function showMessage(id){const x=state.leads.find(x=>x.id===id);if(!x)return;messageLeadId=id;const m=messageFor(x);msgText.textContent=m;const p=normPhone(x.phone);waBtn.style.display=p?'inline-flex':'none';waBtn.href=p?`https://wa.me/${p}?text=${encodeURIComponent(m)}`:'#';mailBtn.style.display=x.email?'inline-flex':'none';mailBtn.href=x.email?`mailto:${encodeURIComponent(x.email)}?subject=${encodeURIComponent('تعاون إقامة للشركات - فلور')}&body=${encodeURIComponent(m)}`:'#';msgModal.classList.add('show')}
+function copyMessage(){navigator.clipboard.writeText(msgText.textContent)}
+function closeModals(){document.querySelectorAll('.modalbg').forEach(x=>x.classList.remove('show'))}
+function exportJSON(){download('flower-b2b-backup-'+today()+'.json',JSON.stringify(state,null,2),'application/json')}
+function exportCSV(){const cols=['name','category','city','branch','phone','email','website','score','status','lastContact','nextFollowup','notes'];let out='\ufeff'+['الشركة','النشاط','المدينة','الفرع','الهاتف','البريد','الموقع','Score','الحالة','آخر تواصل','المتابعة','ملاحظات'].join(',')+'\n';for(const x of state.leads)out+=cols.map(k=>`"${String(x[k]??'').replace(/"/g,'""')}"`).join(',')+'\n';download('flower-b2b-leads-'+today()+'.csv',out,'text/csv;charset=utf-8')}
+function download(name,data,type){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([data],{type}));a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),500)}
+importFile.addEventListener('change',async e=>{const f=e.target.files[0];if(!f)return;try{const d=JSON.parse(await f.text());if(!Array.isArray(d.leads))throw 0;if(confirm(`سيتم استبدال البيانات الحالية بنسخة تحتوي على ${d.leads.length} عميل. متابعة؟`)){state=d;persist();render()}}catch(_){alert('ملف النسخة الاحتياطية غير صالح')}e.target.value=''})
+[q,statusFilter,branchFilter,scoreFilter].forEach(el=>el.addEventListener(el===q?'input':'change',render));
+renderFilters();render();
+</script>
+</body></html>
